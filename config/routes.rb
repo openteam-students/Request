@@ -1,4 +1,6 @@
 Request::Application.routes.draw do
+  resources :performers
+
   resources :requesta
 
   # The priority is based upon order of creation:
