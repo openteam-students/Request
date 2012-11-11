@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Theme:</b>
+  <%= @requestum.theme %>
+</p>
+
+<p>
+  <b>Date time:</b>
+  <%= @requestum.date_time %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @requestum.text %>
+</p>
+
+<p>
+  <b>Id source:</b>
+  <%= @requestum.id_source %>
+</p>
+
+<p>
+  <b>Id project:</b>
+  <%= @requestum.id_project %>
+</p>
+
+<p>
+  <b>Id performer:</b>
+  <%= @requestum.id_performer %>
+</p>
+
+<p>
+  <b>Status request:</b>
+  <%= @requestum.status_request %>
+</p>
+
+
+<%= link_to 'Edit', edit_requestum_path(@requestum) %> |
+<%= link_to 'Back', requesta_path %>

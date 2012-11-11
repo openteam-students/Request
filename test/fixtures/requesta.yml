@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  theme: MyString
+  date_time: 2012-11-11 14:22:22
+  text: MyString
+  id_source: 1
+  id_project: 1
+  id_performer: 1
+  status_request: MyString
+
+two:
+  theme: MyString
+  date_time: 2012-11-11 14:22:22
+  text: MyString
+  id_source: 1
+  id_project: 1
+  id_performer: 1
+  status_request: MyString

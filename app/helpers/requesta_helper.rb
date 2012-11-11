@@ -1,0 +1,2 @@
+module RequestaHelper
+end

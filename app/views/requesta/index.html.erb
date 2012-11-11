@@ -1,0 +1,35 @@
+<h1>Listing requesta</h1>
+
+<table>
+  <tr>
+    <th>Theme</th>
+    <th>Date time</th>
+    <th>Text</th>
+    <th>Id source</th>
+    <th>Id project</th>
+    <th>Id performer</th>
+    <th>Status request</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @requesta.each do |requestum| %>
+  <tr>
+    <td><%= requestum.theme %></td>
+    <td><%= requestum.date_time %></td>
+    <td><%= requestum.text %></td>
+    <td><%= requestum.id_source %></td>
+    <td><%= requestum.id_project %></td>
+    <td><%= requestum.id_performer %></td>
+    <td><%= requestum.status_request %></td>
+    <td><%= link_to 'Show', requestum %></td>
+    <td><%= link_to 'Edit', edit_requestum_path(requestum) %></td>
+    <td><%= link_to 'Destroy', requestum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Requestum', new_requestum_path %>
