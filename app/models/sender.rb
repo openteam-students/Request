@@ -1,0 +1,4 @@
+class Sender < Person
+
+end
+
