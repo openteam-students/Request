@@ -1,5 +1,9 @@
 Request::Application.routes.draw do
 
+  get "issues/index"
+
+  get "issues/show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
