@@ -1,11 +1,25 @@
-<ul>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Название проекта</th>
+      <th>email</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @projects.each do |project|  %>
-    <li>
-      <%= link_to project.title, project %>
-      <%= mail_to project.email %>
-      <%= simple_format project.desc %>
-      <%= link_to "edit", edit_project_path(project) %>
-      <%= link_to "del", project, method: :delete %>
-    </li>
+      <tr>
+        <th> <%= project.id %> </th>
+        <th><%= link_to project.title, project %></th>
+        <th><%= mail_to project.email %></th>
+        <th><%= simple_format project.desc %></th>
+        <th><%= link_to "Удалить", project, method: :delete %>
+      </tr>
   <% end %>
-</ul>
+</tbody>
+</thead>
+</table>
+<h2>
+  <%= link_to "Создать новый проект", new_project_path %>
+</h2>
