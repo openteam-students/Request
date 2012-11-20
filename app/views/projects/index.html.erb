@@ -1,5 +1,11 @@
 <ul>
   <% @projects.each do |project|  %>
-    <li><%= project.title %></li>
+    <li>
+      <%= link_to project.title, project %>
+      <%= mail_to project.email %>
+      <%= simple_format project.desc %>
+      <%= link_to "edit", edit_project_path(project) %>
+      <%= link_to "del", project, method: :delete %>
+    </li>
   <% end %>
 </ul>

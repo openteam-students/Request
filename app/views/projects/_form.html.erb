@@ -1,0 +1,17 @@
+<%= form_for @project do |form| %>
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </p>
+  <p>
+    <%= form.label :desc %>
+    <%= form.text_area :desc %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
