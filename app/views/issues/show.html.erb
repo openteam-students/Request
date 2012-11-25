@@ -1,2 +1,9 @@
-<h1>Issues#show</h1>
-<p>Find me in app/views/issues/show.html.erb</p>
+<ul>
+  <li>ID = <%= @project.id %></li>
+  <li>Title = <%= @project.title %></li>
+  <li>email = <%= mail_to @project.email %></li>
+  <li><%= simple_format @project.desc %></li>
+  <li>Created = <%= @project.created_at %></li>
+  <li>Update = <%= @project.updated_at %></li>
+  <li><%= link_to "edit", edit_project_path(@project) %> <%= link_to "del", @project, :method => :delete %></li>
+</ul>
