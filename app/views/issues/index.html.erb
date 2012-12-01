@@ -1,25 +1,23 @@
+<h2>Проект: <%= @project.title %></h2>
 <table>
   <thead>
     <tr>
       <th>#</th>
-      <th>Название проекта</th>
-      <th>email</th>
-      <th>Описание</th>
+      <th>State</th>
+      <th>Executor</th>
     </tr>
   </thead>
   <tbody>
-  <% @issues.each do |project|  %>
+  <% @issues.each do |issue|  %>
       <tr>
-        <th> <%= project.id %> </th>
-        <th><%= link_to project.title, project %></th>
-        <th><%= mail_to project.email %></th>
-        <th><%= simple_format project.desc %></th>
-        <th><%= link_to "Удалить", project, method: :delete %>
+        <th><%= link_to issue.id, project_issue_path(@project, issue) %></th>
+        <th><%= issue.state %></th>
+        <th><%= issue.executor %></th>
       </tr>
   <% end %>
 </tbody>
 </thead>
 </table>
 <h2>
-  <%= link_to "Создать новый проект", new_project_path %>
+  <%= link_to "Создать новую задачу", new_project_issue_path %>
 </h2>

@@ -1,72 +1,42 @@
 class IssuesController < ApplicationController
-  # GET /issues
-  # GET /issues.json
   def index
     @project=Project.find(params[:project_id])
     @issues = @project.issues
   end
 
-  # GET /issues/1
-  # GET /issues/1.json
   def show
     @issue = Issue.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @issue }
-    end
+    @project = @issue.project
   end
 
-  # GET /issues/new
-  # GET /issues/new.json
   def new
-    @issue = Issue.new
+    @project=Project.find(params[:project_id])
+    @issue = @project.issues.new
   end
 
-  # GET /issues/1/edit
   def edit
     @issue = Issue.find(params[:id])
+    @project = @issue.project
   end
 
-  # POST /issues
-  # POST /issues.json
   def create
-    @issue = Issue.new(params[:issue])
-    #@issue = Issue.new(params[:issue])
+    @project=Project.find(params[:project_id])
+    @issue = @project.issues.new(params[:issue])
     @issue.save
-    redirect_to issues_path
-
-
-    #respond_to do |format|
-      #if @issue.save
-        #format.html { redirect_to @issue, notice: 'Issue was successfully created.' }
-        #format.json { render json: @issue, status: :created, location: @issue }
-      #else
-        #format.html { render action: "new" }
-        #format.json { render json: @issue.errors, status: :unprocessable_entity }
-      #end
-    #end
+    redirect_to project_issue_path(@project)
   end
 
-  # PUT /issues/1
-  # PUT /issues/1.json
   def update
     @issue = Issue.find(params[:id])
     @issue.update_attributes(params[:issue])
-    redirect_to issues_path
-
-
+    @project = @issue.project
+    redirect_to project_issue_path(@project)
   end
 
-  # DELETE /issues/1
-  # DELETE /issues/1.json
   def destroy
     @issue = Issue.find(params[:id])
+    @project = @issue.project
     @issue.destroy
-
-    respond_to do |format|
-      format.html { redirect_to issues_url }
-      format.json { head :no_content }
-    end
+    redirect_to project_issues_path
   end
 end

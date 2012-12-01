@@ -1,17 +1,9 @@
-<%= form_for @issue do |form| %>
+<%= form_for [@project, @issue] do |form| %>
   <p>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :state %>
+    <%= form.text_field :state %>
   </p>
-  <p>
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </p>
-  <p>
-    <%= form.label :desc %>
-    <%= form.text_area :desc %>
-  </p>
-  <p>
+   <p>
     <%= form.submit %>
   </p>
 <% end %>
