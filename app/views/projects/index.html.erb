@@ -9,12 +9,14 @@
   </thead>
   <tbody>
   <% @projects.each do |project|  %>
+    <% if @issues_count[project.id] != 0 %>
       <tr>
         <th><%= link_to project.title, project_issues_path(project) %></th>
         <th><%= mail_to project.email %></th>
         <th><%= simple_format project.desc %></th>
         <th><%= @issues_count[project.id]  %></th>
       </tr>
+    <% end %>
   <% end %>
 </tbody>
 </thead>
