@@ -23,14 +23,14 @@ class IssuesController < ApplicationController
     @project=Project.find(params[:project_id])
     @issue = @project.issues.new(params[:issue])
     @issue.save
-    redirect_to project_issue_path(@project)
+    redirect_to project_issues_path(@project)
   end
 
   def update
     @issue = Issue.find(params[:id])
     @issue.update_attributes(params[:issue])
     @project = @issue.project
-    redirect_to project_issue_path(@project)
+    redirect_to project_issues_path(@project)
   end
 
   def destroy
