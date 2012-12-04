@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
- <table bgcolor="#AADDBG" width=100%> <td> <h1 align=center>Обработка заявок !!!</h1> </td> </table>
+ <table bgcolor="clred" width=100%> <td> <h1 align=center>Обработка заявок !!!</h1> </td> </table>
 
 <%= yield %>
 

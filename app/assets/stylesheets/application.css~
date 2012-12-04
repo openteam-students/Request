@@ -11,6 +11,6 @@
  *= require_self
  *= require_tree .
  */
- .list_even {background: #e0f8f8}
- .list_odd {background: #f8b0f8}
+ .project_even {background: #e0f8f8}
+ .project_odd {background: #f8b0f8}
  

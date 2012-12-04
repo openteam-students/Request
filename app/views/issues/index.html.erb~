@@ -1,5 +1,5 @@
 <h2>Проект: <%= @project.title %></h2>
-<table width=100%>
+<table>
   <thead>
     <tr>
       <th>#</th>
