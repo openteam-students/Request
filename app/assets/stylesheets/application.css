@@ -11,6 +11,30 @@
  *= require_self
  *= require_tree .
  */
- .list_even {background: #e0f8f8}
- .list_odd {background: #f8b0f8}
- 
+h1 {
+  background-color: #3caa3c;
+  /*padding: 16px 0;*/
+  line-height: 140%;
+}
+table { 
+  width: 100%;
+}
+
+table td {
+  border: 3px solid #eee;
+ } 
+
+table .list_even td {background: #e0f8f8}
+table .list_odd td {background: #f8b0f8}
+
+.center {
+  text-align: center;
+}
+
+.linkShowHide {
+  text-align: center;
+}
+
+.list_noCount {
+  display:none;
+}

@@ -1,4 +1,4 @@
-<table border=2 align = center width=100%>
+<table class="list">
   <thead>
     <tr>
       <th>Проект</th>
@@ -9,13 +9,38 @@
   </thead>
   <tbody>
   <% @projects.each do |project|  %>
-      <tr class="<%= cycle('list_odd', 'list_even')%>">
-        <th><%= link_to project.title, project_issues_path(project) %></th>
-        <th><%= mail_to project.email %></th>
-        <th><%= simple_format project.desc %></th>
-        <th><%= @issues_count[project.id]  %></th>
-      </tr>
-  <% end %>
-</tbody>
-</thead>
+    <% if @issues_count[project.id] != 0 %>
+    <tr class="<%= cycle('list_odd', 'list_even')%>">
+    <td class="center"><%= link_to project.title, project_issues_path(project) %></td>
+    <td><%= mail_to project.email %></td>
+    <td><%= simple_format project.desc %></td>
+    <td><%= @issues_count[project.id]  %></td>
+  </tr>
+<% end %>
+<% end %>
+  </tbody>
+</table>
+<hr>
+<h2 class="linkShowHide">Проекты без задач (<%= @project_null %>)</h2>
+<table class="list_noCount">
+  <thead>
+    <tr>
+      <th>Проект</th>
+      <th>email</th>
+      <th>Описание</th>
+      <th>Количество задач</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @projects.each do |project|  %>
+    <% if @issues_count[project.id] == 0 %>
+    <tr class="<%= cycle('list_odd', 'list_even')%>">
+    <td class="center"><%= link_to project.title, project_issues_path(project) %></td>
+    <td><%= mail_to project.email %></td>
+    <td><%= simple_format project.desc %></td>
+    <td><%= @issues_count[project.id]  %></td>
+  </tr>
+<% end %>
+<% end %>
+  </tbody>
 </table>

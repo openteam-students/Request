@@ -1,5 +1,5 @@
 <h2>Проект: <%= @project.title %></h2>
-<table width=100%>
+<table class="list">
   <thead>
     <tr>
       <th>#</th>
@@ -10,9 +10,9 @@
   <tbody>
   <% @issues.each do |issue|  %>
       <tr class="<%= cycle('list_odd', 'list_even')%>">
-        <th><%= link_to issue.id, project_issue_path(@project, issue) %></th>
-        <th><%= issue.state %></th>
-        <th><%= issue.executor %></th>
+        <td class="center"><%= link_to issue.id, project_issue_path(@project, issue) %></td>
+        <td><%= issue.state %></td>
+        <td><%= issue.executor %></td>
       </tr>
   <% end %>
 </tbody>
