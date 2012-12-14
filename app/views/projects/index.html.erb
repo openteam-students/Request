@@ -13,8 +13,8 @@
     <tr class="<%= cycle('list_odd', 'list_even')%>">
     <td class="center"><%= link_to project.title, project_issues_path(project) %></td>
     <td><%= mail_to project.email %></td>
-    <td><%= simple_format project.desc %></td>
-    <td><%= @issues_count[project.id]  %></td>
+    <td><%= truncate(project.desc, length: 200) %></td>
+    <td class="center"><%= @issues_count[project.id]  %></td>
   </tr>
 <% end %>
 <% end %>
@@ -37,8 +37,8 @@
     <tr class="<%= cycle('list_odd', 'list_even')%>">
     <td class="center"><%= link_to project.title, project_issues_path(project) %></td>
     <td><%= mail_to project.email %></td>
-    <td><%= simple_format project.desc %></td>
-    <td><%= @issues_count[project.id]  %></td>
+    <td><%= truncate(project.desc, length: 200) %></td>
+    <td class="center"><%= @issues_count[project.id]  %></td>
   </tr>
 <% end %>
 <% end %>
