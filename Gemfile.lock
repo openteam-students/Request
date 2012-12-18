@@ -135,6 +135,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   inherited_resources
   jquery-rails
+  mail
   rails (= 3.2.8)
   rails-erd
   rspec-rails
