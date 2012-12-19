@@ -3,14 +3,18 @@
   <thead>
     <tr>
       <th>#</th>
-      <th>State</th>
-      <th>Executor</th>
+      <th>Задача</th>
+      <th>От кого</th>
+      <th>Статус</th>
+      <th>Исполнитель</th>
     </tr>
   </thead>
   <tbody>
   <% @issues.each do |issue|  %>
       <tr class="<%= cycle('list_odd', 'list_even')%>">
         <td class="center"><%= link_to issue.id, project_issue_path(@project, issue) %></td>
+        <td>#</td>
+        <td>#</td>
         <td><%= issue.state %></td>
         <td><%= issue.executor %></td>
       </tr>
