@@ -13,6 +13,8 @@ group :default do
   gem 'inherited_resources'
   gem 'jquery-rails'
   gem 'rails-erd'
+  gem 'configliere'
+  gem 'gmail'
 end
 
 group :development do
