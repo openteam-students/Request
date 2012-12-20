@@ -25,4 +25,3 @@ group :test do
   gem 'rspec-rails'
   gem 'spork'
 end
-
