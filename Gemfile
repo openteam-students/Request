@@ -15,6 +15,8 @@ group :default do
   gem 'rails-erd'
   gem 'configliere'
   gem 'gmail'
+  gem 'hashie'
+  gem 'progress_bar'
 end
 
 group :development do
