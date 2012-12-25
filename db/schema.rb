@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121116133206) do
+ActiveRecord::Schema.define(:version => 20121225093700) do
 
   create_table "emails", :force => true do |t|
     t.string   "subject"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20121116133206) do
     t.integer  "project_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "uid"
   end
 
   add_index "emails", ["issue_id"], :name => "index_emails_on_issue_id"
